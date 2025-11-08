@@ -1,0 +1,67 @@
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            padding: 15px 30px;
+            color: white;
+            border-bottom: 3px solid #00bcd4; /* garis bawah biru */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* sedikit bayangan biar elegan */
+        }
+
+        /* Logo atau Judul Website */
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 2px solid #00bcd4; /* border di sekitar logo */
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+
+        /* Menu di kanan */
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        /* Efek hover */
+        .navbar ul li a:hover {
+            color: #00bcd4;
+            border-color: #00bcd4;
+            background-color: rgba(0,188,212,0.1);
+        }
+           body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Konten utama */
+        .content {
+            padding: 100px;
+            text-align: center;
+        }
+        .content{
+            text-align: left;
+        }
+
