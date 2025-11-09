@@ -93,7 +93,48 @@ body {
 }
 .teks1{
     text-align: left;
+    padding-left: 60px;
 }
 .teks2{
     text-align: right;
+    padding-right: 60px;
+}
+/* *
+ * ========================================
+ * TOMBOL CTA (CALL TO ACTION)
+ * ========================================
+ */
+
+/* 1. Kontainer untuk menengahkan tombol */
+.cta {
+    width: 100%;            /* Penuhi lebar layar */
+    text-align: center;     /* Ini adalah cara termudah untuk memusatkan tombol */
+    padding: 30px 0 50px 0; /* Memberi jarak dari konten di atas (30px) dan bawah (50px) */
+    box-sizing: border-box; /* Agar padding tidak merusak layout */
+}
+
+/* 2. Tampilan tombol CTA itu sendiri */
+.cta-button {
+    /* Tampilan */
+    display: inline-block; /* Perlu agar padding dan text-align berfungsi */
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF0CE;
+    /* Saya pakai warna biru dari hover navbar Anda */
+    background-color: red; 
+    
+    /* Bentuk & Ukuran */
+    padding: 15px 40px;      /* 15px atas/bawah, 40px kiri/kanan */
+    border-radius: 50px;     /* Membuat sudutnya jadi "pil" (bulat penuh) */
+    text-decoration: none;   /* Menghilangkan garis bawah standar link */
+
+    /* Efek */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3. Efek Hover (saat mouse di atas tombol) */
+.cta-button:hover {
+    transform: scale(1.05); /* Sedikit membesar */
+    /* Memberi bayangan biru yang bersinar */
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.5); 
 }
