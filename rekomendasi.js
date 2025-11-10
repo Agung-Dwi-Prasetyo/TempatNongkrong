@@ -15,16 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let index = 0; 
     const totalItems = items.length;
     const angle = 360 / totalItems; 
-    
-    // Kita perbesar radiusnya agar tidak tumpang tindih
     const radius = 450; 
 
     function updateCarousel() {
-        // 1. Putar seluruh slider
         const rotateY = -index * angle;
         slider.style.transform = `rotateY(${rotateY}deg)`;
-
-        // 2. Atur setiap item
         items.forEach((item, i) => {
             const itemAngle = i * angle;
             
@@ -32,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
             let transform = `rotateY(${itemAngle}deg) translateZ(${radius}px)`;
             transform += ` rotateY(${itemAngle * -1}deg)`;
             transform += ` rotateY(${rotateY * -1}deg)`;
-
-            // --- INI LOGIKA UNTUK MENAMPILKAN HANYA 3 ITEM ---
             
             // Hitung jarak dari index aktif (0)
             let distance = Math.abs(i - index);
@@ -42,19 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (distance > totalItems / 2) {
                 distance = totalItems - distance; 
             }
-
-            // Terapkan style berdasarkan jarak
             if (distance === 0) {
-                // Item Aktif (Tengah)
                 item.style.opacity = '1';
                 item.style.zIndex = '10';
             } else if (distance === 1) {
-                // Item Samping (Kiri/Kanan)
-                item.style.opacity = '0.8'; // Agak transparan
+                item.style.opacity = '0.8'; 
                 item.style.zIndex = '5';
             } else {
-                // SEMUA ITEM LAIN (jarak > 1)
-                item.style.opacity = '0'; // HILANG
+                item.style.opacity = '0'; 
                 item.style.zIndex = '0';
             }
             
@@ -63,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Tombol NEXT (looping 100% mulus)
+    // Tombol NEXT
     nextBtn.addEventListener('click', () => {
         index = (index + 1) % totalItems;
         updateCarousel();
     });
 
-    // Tombol PREV (looping 100% mulus)
+    // Tombol PREV
     prevBtn.addEventListener('click', () => {
         index = (index - 1 + totalItems) % totalItems;
         updateCarousel();
