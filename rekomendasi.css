@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: none;
+    background-image: url("BACKGROUND.png");
     background-color: antiquewhite; 
     min-height: 100vh;
 }
