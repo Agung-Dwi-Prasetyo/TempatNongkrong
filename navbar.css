@@ -14,7 +14,7 @@ body {
     width: 100%;
     height: 100vh;
     z-index: 1;  
-    background-image: url('fotoui.png'); 
+    background-image: url('UI.png'); 
     background-size: cover;         
     background-position: center;    
     background-repeat: no-repeat;
@@ -148,7 +148,7 @@ body {
     font-size: 36px;
     color: #333;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     text-shadow: none;
 }
 
@@ -156,7 +156,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
-    gap: 30px;
+    gap: 200px;
     margin-bottom: 30px;
 }
 
@@ -177,8 +177,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #333;
+    object-fit: contain;
     position: relative;
     z-index: 2;
 }
@@ -186,8 +185,8 @@ body {
 .star-background {
     position: absolute;
     z-index: 1;
-    width: 180px; 
-    height: 180px;
+    width: 250px; 
+    height: 250px;
     background-color: #00bcd4;
     top: 50%;
     left: 50%;
