@@ -34,6 +34,7 @@ body {
     border-radius: 10px;
     box-sizing: border-box; 
     width: calc(100% - 40px); 
+    flex-direction: row;
 }
 
 .navbar .logo {
@@ -251,8 +252,7 @@ body {
         font-size: 28px;
         margin-bottom: 40px;
     }
-}
-.hamburger-menu {
+    .hamburger-menu {
     display: none;
     cursor: pointer;
 }
@@ -290,3 +290,5 @@ body {
     #nav-links.active {
         transform: translateX(0);
     }
+
+}
