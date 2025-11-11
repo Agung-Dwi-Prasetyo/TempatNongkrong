@@ -108,11 +108,10 @@ body {
     /* 2. Perkecil Kotak Spot */
     /* Ini adalah bagian terpenting */
     .spot-item {
-        width: 200px;  /* Perkecil lebar kotaknya */
-        height: 140px; /* Perkecil tinggi kotaknya */
+        width: 200px; 
+        height: 140px;
     }
 
-    /* 3. Perkecil Tombol Panah */
     .carousel-btn {
         width: 40px;
         height: 40px;
