@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); 
+        });
+    }
 
     const slider = document.querySelector('.carousel-slider');
     const prevBtn = document.getElementById('prevBtn');
