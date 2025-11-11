@@ -87,3 +87,37 @@ body {
 .carousel-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
 .carousel-btn.prev { left: 30px; }
 .carousel-btn.next { right: 30px; }
+/* ========================================
+   ATURAN RESPONSIVE (untuk rekomendasi.html)
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    .judul-rekomendasi {
+        font-size: 24px; /* Perkecil judul */
+        width: 90%;
+        box-sizing: border-box;
+    }
+    
+    /* 1. Perkecil Carousel */
+    .carousel-container {
+        width: 95%; /* Buat lebih lebar di layar HP */
+        padding: 10px;
+    }
+    
+    /* 2. Perkecil Kotak Spot */
+    /* Ini adalah bagian terpenting */
+    .spot-item {
+        width: 200px;  /* Perkecil lebar kotaknya */
+        height: 140px; /* Perkecil tinggi kotaknya */
+    }
+
+    /* 3. Perkecil Tombol Panah */
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    .carousel-btn.prev { left: 5px; }
+    .carousel-btn.next { right: 5px; }
+}
