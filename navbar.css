@@ -37,7 +37,7 @@ body {
 }
 
 .navbar .logo {
-    font-size: 22px;
+    font-size: clamp(18px, 2vw + 1px, 25px);    
     font-weight: bold;
     letter-spacing: 1px;
     color: white; 
@@ -211,7 +211,27 @@ body {
     color: #555;
 }
 
+@media (max-width: 768px) {
+    .konten-utama {
+        flex-direction: column; /* Tumpuk .teks1 dan .teks2 */
+        text-align: center;     /* Ratakan tengah semua */
+        gap: 30px;
+        align-items: center;    /* Pastikan H1 sejajar di tengah */
+    }
 
+    .teks1, .teks2 {
+        text-align: center; /* Hapus rata kiri/kanan di HP */
+        padding: 0 10px;    /* Hapus padding samping */
+    }
+    /* 3. Perbaiki Meet the Team */
+    .team-row {
+        gap: 20px; /* Kurangi jarak antar bintang */
+    }
+    .meet-the-team h2 {
+        font-size: 28px; /* Perkecil judul */
+        margin-bottom: 40px;
+    }
+}
 /* 1. Sembunyikan tombol hamburger di desktop */
 .hamburger-menu {
     display: none;
