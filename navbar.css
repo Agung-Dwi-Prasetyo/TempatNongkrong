@@ -138,7 +138,12 @@ body {
     position: relative; 
     z-index: 2;
     margin-top: 100vh; 
-    background-color: antiquewhite;
+    background-image: url(BACKGROUND\ DEVELOP.png);
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+    z-index: 2; 
+    margin-top: 100vh; 
     width: 100%;
     padding: 50px 20px;
     box-sizing: border-box;
@@ -204,4 +209,59 @@ body {
     font-size: 14px;
     margin: 0;
     color: #555;
+}
+
+
+/* 1. Sembunyikan tombol hamburger di desktop */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white; /* Warna garis */
+    transition: 0.4s;
+}
+
+/* 2. Aturan untuk layar kecil (HP/Tablet) */
+@media (max-width: 768px) {
+    
+    /* 1. Sembunyikan link <ul> di navbar (karena kita ganti jadi sidebar) */
+    .navbar ul {
+        display: none; 
+    }
+
+    /* 2. MUNCULKAN tombol hamburger di HP */
+    .hamburger-menu {
+        display: block; /* Muncul di HP */
+    }
+
+    /* 3. Style menu <ul> sebagai sidebar tersembunyi */
+    #nav-links {
+        position: fixed; /* Mengambang di atas segalanya */
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        height: 100vh; 
+        width: 250px;
+        
+        background-color: #333; /* Background sidebar */
+        padding-top: 60px;
+        
+        display: flex; 
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+  
+    #nav-links.active {
+        transform: translateX(0);
+    }
 }
