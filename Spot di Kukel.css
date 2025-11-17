@@ -1,0 +1,287 @@
+/* --- CSS Reset & Global (Inherited from original) --- */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Mencegah scroll horizontal dari elemen lebar */
+}
+a {
+  text-decoration: none;
+}
+button:focus-visible,
+.button-link:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline-offset: 2px;
+}
+.restaurant-link:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline-offset: 2px;
+}
+
+/* --- KUKEL Main Container (Responsif) --- */
+.kukel {
+  background-color: #73a1bb;
+  width: 100%;
+  min-height: 100vh; /* Menggunakan viewport height */
+  position: relative;
+  padding: 50px 0; /* Memberi padding atas/bawah */
+}
+
+/* --- Header Section (Responsif) --- */
+.kukel-header {
+  text-align: center;
+  padding: 0 5%;
+  margin-bottom: 50px;
+}
+.kukel .div {
+  position: static; /* Mengubah absolute menjadi static */
+  width: 100%;
+  -webkit-text-stroke: 1.93px #000000;
+  font-family: "Poppins-Bold", Helvetica;
+  font-weight: 700;
+  color: #f1ead8;
+  font-size: 10vw; /* Menggunakan unit viewport untuk ukuran yang responsif */
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.kukel .p {
+  position: static; /* Mengubah absolute menjadi static */
+  width: 100%;
+  font-family: "Lora-Bold", Helvetica;
+  font-weight: 700;
+  color: #f1ead8;
+  font-size: 3.5vw;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* --- Restaurant Sections (Responsif Flexbox/Grid) --- */
+.restaurant-section-wrapper {
+  display: flex;
+  flex-direction: column; /* Default: satu kolom */
+  align-items: center;
+}
+
+.restaurant-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+  padding: 0 5%;
+  text-align: center;
+  width: 100%;
+}
+
+.restaurant-section:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1); /* Untuk visual pembeda */
+}
+
+/* Title Styling */
+.kukel .group-2, .kukel .group-3, .kukel .group-4 {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kukel .ellipse-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: none;
+}
+
+.kukel .ellipse {
+    width: 100%;
+    height: 100%;
+    background-color: #ff0000;
+    border-radius: 50%;
+    border: 2px solid #000000;
+}
+
+.kukel .text-wrapper-2, .kukel .text-wrapper-3 {
+    position: absolute;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Plus Jakarta Sans-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #f1ead8;
+    font-size: 8vw;
+    white-space: nowrap;
+    z-index: 10;
+    -webkit-text-stroke: 0.85px #000000;
+}
+
+.kukel .text-wrapper-3 {
+    font-size: 6.5vw;
+    -webkit-text-stroke: 0.62px #000000;
+}
+
+/* Image Frames (Responsif) */
+.kukel .frame,
+.kukel .frame-2,
+.kukel .frame-3 {
+  position: static;
+  width: 90vw;
+  height: auto;
+  max-width: 800px;
+  margin: 30px auto;
+  overflow: hidden;
+  border: 7px solid #000000;
+  transform: none;
+}
+
+.kukel .img,
+.kukel .image {
+  position: static;
+  width: 100%;
+  height: auto;
+  transform: none;
+  object-fit: cover;
+}
+
+/* Menyembunyikan elemen placeholder/dekoratif yang tidak relevan di mobile */
+.kukel .whatsapp-image,
+.kukel .whatsapp-image-2,
+.kukel .text-wrapper {
+    display: none;
+}
+
+/* Description Text (Responsif) */
+.kukel .text-wrapper-4,
+.kukel .text-wrapper-5,
+.kukel .text-wrapper-6 {
+  position: static;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: "Plus Jakarta Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #f1ead8;
+  font-size: 4vw;
+  line-height: 1.4;
+}
+
+/* Button (Responsif) */
+.kukel .group-5,
+.kukel .group-6,
+.kukel .group-7 {
+  position: relative;
+  width: 70vw;
+  max-width: 400px;
+  height: 70px;
+  margin: 30px auto;
+}
+.kukel .rectangle {
+  width: 100%;
+  height: 100%;
+  background-color: #dfe578;
+  transition: background-color 0.3s ease;
+}
+
+.button-link:hover .rectangle,
+.group-6:hover .rectangle,
+.group-7:hover .rectangle {
+  background-color: #c9cf5f;
+}
+
+.kukel .text-wrapper-7 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  font-family: "Plus Jakarta Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 5vw;
+  line-height: normal;
+  white-space: nowrap;
+  padding: 0 10px;
+}
+
+/* --- Decorative Images (Dihilangkan atau Disembunyikan) --- */
+.kukel .group,
+.kukel .group-8,
+.kukel .group-9,
+.kukel .group-10,
+.kukel .group-11,
+.kukel .group-12,
+.kukel .group-13 {
+  display: none;
+}
+
+/* --- Media Query untuk Layar Lebar (Desktop) --- */
+@media (min-width: 768px) {
+  /* Mengatur ulang layout untuk layar tablet/desktop */
+  .kukel .div {
+      font-size: 150px; /* Kembali ke ukuran font yang besar */
+  }
+  .kukel .p {
+      font-size: 32px;
+  }
+  
+  /* Layout 3 Kolom */
+  .restaurant-section-wrapper {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 0 20px;
+  }
+  
+  .restaurant-section {
+      width: 30%; /* Tiga kolom di desktop */
+      margin-bottom: 50px;
+  }
+  
+  /* Ukuran font Title */
+  .kukel .text-wrapper-2, .kukel .text-wrapper-3 {
+      font-size: 60px;
+  }
+  
+  /* Ukuran font Deskripsi */
+  .kukel .text-wrapper-4,
+  .kukel .text-wrapper-5,
+  .kukel .text-wrapper-6 {
+      font-size: 24px;
+  }
+
+  /* Ukuran tombol */
+  .kukel .group-5,
+  .kukel .group-6,
+  .kukel .group-7 {
+      width: 100%;
+      max-width: 449px;
+  }
+  .kukel .text-wrapper-7 {
+      font-size: 32px;
+  }
+
+  /* Mengaktifkan kembali gambar dekoratif di posisi tertentu */
+  .kukel .group-9 {
+      display: block;
+      position: absolute;
+      top: 148px;
+      right: 50px;
+  }
+  .kukel .group-13 {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50px;
+  }
+}
