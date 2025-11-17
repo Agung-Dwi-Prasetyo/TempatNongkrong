@@ -85,7 +85,6 @@ body {
     padding: 20px;           
     box-sizing: border-box;
     flex: 1;
-    overflow: auto;
 }
 
 .teks1, 
@@ -111,7 +110,7 @@ body {
 
 .cta {
     width: 100%;            
-    padding: 30px 0 50px 0; 
+    padding: 30px 0 65px 0; 
     box-sizing: border-box; 
     display: flex;          
     justify-content: center; 
@@ -212,6 +211,46 @@ body {
     margin: 0;
     color: #555;
 }
+.about-us {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    padding: 80px 50px;
+    box-sizing: border-box;
+}
+
+.about-content {
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    gap: 50px; 
+    text-align: left; 
+}
+.about-left, 
+.about-right {
+    flex: 1; 
+}
+.about-right{
+    text-align: right;
+}
+
+.about-us h3 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: none; 
+    margin-top: 0;
+}
+
+.about-us p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
 
 @media (max-width: 768px) {
     .konten-utama h1 {
@@ -238,6 +277,9 @@ body {
         text-align: center;     
         gap: 30px;
         align-items: center; 
+        overflow-y: auto;
+        -webkit-scrollbardisplay: none;
+        scrollbar-width: none;
     }
 
     .teks1, .teks2 {
@@ -247,15 +289,42 @@ body {
    
     .team-row {
         gap: 20px;
+        flex-direction: column;
+        align-items: center;   
+        gap: 50px;              
+        width: 100%;
+        margin-bottom: 0;
     }
+    .team-member {
+        width: 100%;        
+        display: flex;      
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-row:first-of-type {
+        margin-bottom: 50px; 
+    }
+
     .meet-the-team h2 {
         font-size: 28px;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
+    .star-background {
+        width: 200px; 
+        height: 200px;
+    }
+
+    .photo-wrapper {
+        width: 130px; 
+        height: 130px;
+    }
+
     .hamburger-menu {
     display: none;
     cursor: pointer;
 }
+
 
 .hamburger-menu .bar {
     display: block;
@@ -290,5 +359,13 @@ body {
     #nav-links.active {
         transform: translateX(0);
     }
+    .about-content {
+        flex-direction: column; /* Tumpuk ke bawah di HP */
+        gap: 40px;
+    }
+    
+    .about-us {
+        padding: 50px 20px;
+    }   
 
 }
