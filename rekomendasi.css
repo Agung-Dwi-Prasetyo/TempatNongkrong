@@ -54,7 +54,6 @@ body {
 
     cursor: pointer;
     border-radius: 8px;
-    background-color: white;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     overflow: hidden; 
     transform: translateX(-50%) translateY(-50%); 
