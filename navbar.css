@@ -53,6 +53,10 @@ body {
     margin-top: 20px; /* Jarak dari atas layar */
     box-sizing: border-box; 
     width: 95%; /* Lebar navbar di desktop */
+    max-width: 1200px; /* Batas lebar maksimal biar rapi */
+    
+    /* Efek Blur di belakang navbar agar tulisan tetap terbaca saat discroll */
+    backdrop-filter: blur(5px); 
 }
 
 .navbar .logo {
@@ -269,6 +273,8 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: contain;
+    background-color: white;
+    border: 3px solid white;
     position: relative;
     z-index: 2;
 }
