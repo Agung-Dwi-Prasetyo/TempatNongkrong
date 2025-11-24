@@ -1,21 +1,28 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    font-family: 'Fredoka', sans-serif;
+    /* Menggunakan font baru di seluruh website */
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #111; 
-    overflow-x: hidden; /* Mencegah scroll samping */
+    overflow-x: hidden; 
 }
+
+/* ============================================================
+   2. HERO SECTION (FIXED BACKGROUND)
+   ============================================================ */
 .hero-section {
-    position: fixed; /* KUNCI: Diam di tempat */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;   /* Tinggi sepenuh layar */
-    z-index: 1;      /* Layer paling bawah */
+    height: 100vh;   
+    z-index: 1;      
     
     background-image: url('UI.png'); 
     background-size: cover;         
@@ -26,47 +33,38 @@ body {
     flex-direction: column;
 }
 
-/* ========================================
-   3. NAVBAR (TAMPILAN DESKTOP)
-   ======================================== */
+/* ============================================================
+   3. NAVBAR (DESKTOP)
+   ============================================================ */
 .navbar {
-    /* --- PERUBAHAN PENTING DI SINI --- */
-    position: fixed; /* Membuat navbar menempel di layar */
-    top: 0;
-    left: 50%; /* Trik untuk menengahkan elemen fixed */
-    transform: translateX(-50%); /* Lanjutan trik tengah */
-    
-    z-index: 99999; /* Angka tertinggi agar tidak ada yang berani menutupi */
-    
-    /* Style Desktop (Mengambang) */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     color: white; 
-    background-color: transparent; /* Transparan */
+    background-color: transparent; 
     
-    margin-top: 20px; /* Jarak dari atas layar */
+    position: relative;
+    z-index: 9999; 
+    
+    margin: 20px;
+    border-radius: 10px;
     box-sizing: border-box; 
-    width: 95%; /* Lebar navbar di desktop */
-    max-width: 1200px; /* Batas lebar maksimal biar rapi */
-    
-    /* Efek Blur di belakang navbar agar tulisan tetap terbaca saat discroll */
-    backdrop-filter: blur(5px); 
+    width: calc(100% - 40px); 
 }
 
-.navbar .logo {
-    font-size: clamp(18px, 2vw + 1px, 25px);    
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: white; 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    background-color: red; 
-    padding: 5px 10px;   
-    border-radius: 6px; 
+.logo-link {
+    display: flex;          /* Agar gambar rata tengah vertikal */
+    align-items: center;
+    text-decoration: none;  /* Hapus garis bawah link */
+    cursor: pointer;
 }
 
-/* Menu Desktop */
+/* 2. Gambarnya (<img>) */
+.logo-img {
+    height: 100px;  /* Atur TINGGI logo agar pas di navbar (sesuaikan angkanya) */
+    width: auto;}
+
 .navbar ul {
     list-style: none;
     margin: 0;
@@ -75,14 +73,12 @@ body {
     gap: 25px;
 }
 
-.navbar ul li {
-    display: inline;
-}
+.navbar ul li { display: inline; }
 
 .navbar ul li a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600; /* Sedikit lebih tebal agar jelas */
     padding: 5px 10px;
     border: 2px solid transparent;
     border-radius: 6px;
@@ -97,7 +93,6 @@ body {
     background-color: rgba(255, 255, 255, 0.1); 
 }
 
-/* Hamburger (SEMBUNYI DI DESKTOP) */
 .hamburger-menu {
     display: none; 
     cursor: pointer;
@@ -112,17 +107,22 @@ body {
     transition: 0.4s;
 }
 
-/* ========================================
-   4. KONTEN UTAMA & CTA (DI DALAM HERO)
-   ======================================== */
+/* ============================================================
+   4. KONTEN UTAMA (TEKS HERO)
+   ============================================================ */
 .konten-utama {
     display: flex;           
-    align-items: baseline;
+    align-items: center;
     width: 100%;             
     padding: 20px;           
     box-sizing: border-box;
-    flex: 1;
-    /* Overflow auto dihapus di desktop agar bersih */
+    flex: 1; 
+}
+.center-logo {
+    width: 300px;
+    height: auto; 
+    margin: 0 20px; 
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
 }
 
 .teks1, .teks2 {
@@ -130,9 +130,10 @@ body {
     color: #FFF0CE; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     flex: 1;
+    font-weight: 700;
 }
 
-.teks1 h1:first-child,
+.teks1 h1:first-child, 
 .teks2 h1:first-child {
     margin-top: 0; 
 }
@@ -145,27 +146,34 @@ body {
 
 .teks2 {
     text-align: right;
-    padding-right: 50px; 
+    padding-right: 50px;
+    padding-top: 100px; 
 }
 
+/* ============================================================
+   5. CTA (TOMBOL)
+   ============================================================ */
 .cta {
     width: 100%;            
-    padding: 30px 0 200px 0; /* Padding bawah besar agar tombol naik */
+    padding: 30px 0 200px 0; 
     box-sizing: border-box; 
     display: flex;          
     justify-content: center; 
+    position: relative;
+    z-index: 2; 
 }
 
 .cta-button {
     display: inline-block; 
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 800; /* Extra Bold */
     color: antiquewhite;
     background-color: red; 
     padding: 15px 40px;      
     border-radius: 50px;     
     text-decoration: none;   
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 .cta-button:hover {
@@ -173,19 +181,18 @@ body {
     box-shadow: 0 4px 20px rgba(0, 188, 212, 0.5); 
 }
 
-/* ========================================
-   5. RUNNING TEXT (SCROLLABLE)
-   ======================================== */
+/* ============================================================
+   6. RUNNING TEXT
+   ============================================================ */
 .running-text-section {
     width: 100%;
     background-color: #FFD700; 
     overflow: hidden; 
     padding: 15px 0; 
     
-    /* PENTING: Ini elemen pertama yang di-scroll */
     position: relative; 
     z-index: 5; 
-    margin-top: 100vh; /* Mendorong agar mulai DI BAWAH layar awal */
+    margin-top: 100vh; 
     
     border-top: 3px solid black; 
     border-bottom: 3px solid black; 
@@ -203,11 +210,11 @@ body {
 }
 
 .running-content span {
+    font-family: 'Plus Jakarta Sans', sans-serif; /* Pastikan font sama */
     font-size: 24px;
-    font-weight: 900; 
+    font-weight: 800; /* Extra Bold biar tegas */
     color: black;
     text-transform: uppercase; 
-    font-family: sans-serif;
     white-space: nowrap; 
     padding-right: 50px; 
 }
@@ -217,18 +224,18 @@ body {
     100% { transform: translateX(-50%); }
 }
 
-/* ========================================
-   6. MEET THE TEAM
-   ======================================== */
+/* ============================================================
+   7. MEET THE TEAM
+   ============================================================ */
 .meet-the-team {
     position: relative; 
-    z-index: 2; 
-    margin-top: 0; /* Tidak perlu margin lagi karena ada running text */
+    z-index: 5; 
+    margin-top: 0; 
     
     background-image: url('BACKGROUND DEVELOP.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efek Parallax */
+    background-attachment: fixed; 
     
     width: 100%;
     padding: 50px 20px;
@@ -237,9 +244,10 @@ body {
 
 .meet-the-team h2 {
     font-size: 36px;
-    color: white; /* Teks Putih */
+    color: white;
     text-align: center;
     margin-bottom: 70px;
+    font-weight: 800;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
@@ -247,7 +255,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
-    gap: 100px; /* Jarak antar orang */
+    gap: 100px;
     margin-bottom: 50px;
 }
 
@@ -269,8 +277,6 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: contain;
-    background-color: white;
-    border: 3px solid white;
     position: relative;
     z-index: 2;
 }
@@ -291,20 +297,31 @@ body {
     font-size: 18px;
     margin: 0 0 5px 0;
     color: white;
+    font-weight: 700;
 }
 
 .team-member p {
     font-size: 14px;
     margin: 0;
     color: #ddd;
+    font-weight: 400;
 }
 
-/* ========================================
-   7. ABOUT US
-   ======================================== */
+.shake { animation: shake-animation 0.4s ease-in-out; }
+@keyframes shake-animation {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* ============================================================
+   8. ABOUT US
+   ============================================================ */
 .about-us {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     background-color: white;
     width: 100%;
     padding: 80px 50px;
@@ -332,7 +349,7 @@ body {
     font-size: 36px;
     color: #333;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: 800;
     margin-top: 0;
 }
 
@@ -341,14 +358,14 @@ body {
     color: #555;
     line-height: 1.6;
     margin: 0;
+    font-weight: 500;
 }
 
-/* ========================================
-   8. RESPONSIVE MOBILE (HP)
-   ======================================== */
+/* ============================================================
+   9. MEDIA QUERY (RESPONSIVE HP)
+   ============================================================ */
 @media (max-width: 768px) {
 
-    /* Navbar jadi Full Width */
     .navbar {
         width: 100%;
         margin: 0;
@@ -356,12 +373,14 @@ body {
         border: none;
         padding: 15px 20px;
     }
+    .center-logo {
+        width: 100px;
+        margin: 20px 0; 
+    }
 
-    /* Sembunyikan Menu Biasa, Munculkan Hamburger */
     .navbar ul { display: none; }
     .hamburger-menu { display: block; }
 
-    /* Sidebar Menu */
     #nav-links {
         position: fixed;
         z-index: 1000;
@@ -378,18 +397,14 @@ body {
         transform: translateX(-100%);
         transition: transform 0.5s ease-in-out;
     }
-    #nav-links.active {
-        transform: translateX(0);
-    }
+    #nav-links.active { transform: translateX(0); }
 
-    /* Konten Utama */
     .konten-utama {
         flex-direction: column;
         text-align: center;
         gap: 20px;
         align-items: center;
-        /* Scroll jika konten kepanjangan di HP */
-        overflow-y: auto;
+        overflow-y: auto; 
         scrollbar-width: none; 
     }
     
@@ -405,39 +420,37 @@ body {
         line-height: 1.1;
     }
 
-    /* Running Text */
     .running-content span {
         font-size: 16px;
         padding-right: 30px;
     }
 
-    /* Meet The Team (Satu Kolom) */
     .team-row {
         flex-direction: column;
         align-items: center;
         gap: 60px;
         margin-bottom: 0;
     }
-    .team-row:first-of-type {
-        margin-bottom: 60px;
-    }
-    .team-member {
-        width: 100%;
-    }
+    .team-row:first-of-type { margin-bottom: 60px; }
+    
+    .team-member { width: 100%; }
+    
     .meet-the-team h2 {
         font-size: 28px;
         margin-bottom: 50px;
     }
 
-    /* About Us (Tumpuk) */
     .about-content {
         flex-direction: column;
         gap: 40px;
     }
     .about-right {
-        text-align: left; /* Balikin ke kiri di HP biar rapi */
+        text-align: left; 
     }
     .about-us {
         padding: 50px 20px;
+    }
+    .logo-img {
+        height: 40px; /* Perkecil sedikit logo di HP jika perlu */
     }
 }
