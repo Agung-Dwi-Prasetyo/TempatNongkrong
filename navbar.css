@@ -5,14 +5,10 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Fredoka', sans-serif;
     background-color: #111; 
     overflow-x: hidden; /* Mencegah scroll samping */
 }
-
-/* ========================================
-   2. HERO SECTION (DIAM / FIXED)
-   ======================================== */
 .hero-section {
     position: fixed; /* KUNCI: Diam di tempat */
     top: 0;
