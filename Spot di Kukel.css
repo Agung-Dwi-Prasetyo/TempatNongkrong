@@ -2,12 +2,12 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Fredoka', sans-serif; /* Font bulat mirip gambar */
+    font-family: 'Fredoka', sans-serif; 
 }
 
 /* Background Biru Utama */
 .kukel-section {
-    background-color: #73A1BB; /* Warna biru sesuai gambar */
+    background-color: #73A1BB; 
     padding: 40px 20px;
     min-height: 100vh;
     position: relative;
@@ -21,11 +21,10 @@ body {
     z-index: 2;
 }
 
-/* --- Header Title --- */
 .kukel-header {
     text-align: center;
     margin-bottom: 50px;
-    color: #fff; /* Warna teks putih */
+    color: #fff; 
 }
 
 .kukel-header h1 {
@@ -57,15 +56,15 @@ body {
     align-items: start;
 }
 
-/* --- Card Item --- */
+
 .kukel-card {
-    display: flex;
-    flex-direction: column;
+   display: flex;
+    flex-direction: column; 
     align-items: center;
     text-align: center;
+    height: 100%;
 }
 
-/* Label Merah Oval */
 .card-label {
     background-color: #FF0000;
     color: white;
@@ -126,6 +125,7 @@ body {
     font-size: 1rem;
     border-radius: 4px; /* Tidak terlalu bulat */
     display: inline-block;
+    margin-top: auto;
 }
 
 /* --- Dekorasi Ikan --- */
@@ -181,10 +181,6 @@ body {
     transform: rotate(10deg);
 }
 
-
-/* =========================================
-   RESPONSIF (TAMPILAN HP)
-========================================= */
 @media (max-width: 768px) {
     .kukel-header h1 {
         font-size: 2rem; /* Perkecil judul */
